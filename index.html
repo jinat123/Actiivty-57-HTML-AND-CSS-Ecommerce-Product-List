@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+    }
+    .header {
+        text-align: center;
+        padding: 2rem;
+        background-color: #333;
+        color: #fff;
+    }
+    .header__title {
+        font-size: 2rem;
+        margin: 0;
+    }
+    .product-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 2rem;
+        padding: 2rem;
+    }
+    .product {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+    .product__image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+    .product__name {
+        font-size: 1.2rem;
+        margin: 1rem 0;
+        color: #464646;
+        text-align: center;
+    }
+    .product__description {
+        font-size: 0.9rem;
+        color: #464646;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    .product__price {
+        font-size: 1.2rem;
+        color: #ff4f5e;
+        margin: 1rem 0;
+    }
+    .product__top-buttons {
+        display: flex;
+        justify-content: flex-start; 
+        align-items: center;        
+        gap: 10px;                  
+      }
+      
+      .product__appliances,
+      .product__add-to-cart {
+        display: inline-block;
+        padding: 5px 15px;
+        font-size: 12px;
+        border-radius: 10px;
+        font-weight: bold;
+        cursor: default;
+        
+      }
+      
+      .product__appliances {
+        background-color: #00c853;
+        color: white;
+      }
+      
+      .product__add-to-cart {
+        background-color: #e0e0e0;
+        color: #333;
+      }
+    .product__bottom-buttons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        width: 100%;
+    }
+    .product__view-details {
+        background-color: transparent;
+        color: #464646;
+        padding: 0.8rem 1.2rem;
+        border-radius: 10px;
+        font-size: 1rem;
+        cursor: pointer;
+        font-weight: bold;
+    }
+    .product__buy-now{
+        background-color: #767676;
+        color: rgb(255, 255, 255);
+        border-radius: 10px;
+        border: solid 2px transparent;
+        font-weight: bold;
+        
+    }
+    .product__view-details: {
+        background-color: #0056b3;
+    }
+    @media (max-width: 600px) {
+        .product-list {
+            grid-template-columns: repeat(1fr 1fr);
+        }
+        .product__bottom-buttons {
+            grid-template-columns: 1fr; 
+            gap: 1rem;
+        }
+        .product__add-to-cart,
+        .product__view-details {
+            width: 100%; 
+        }
+        .product__appliances {
+            width: 100%;
+    }
+    @media (min-width: 601px) and (max-width: 1024px) {
+        .product-list {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    @media (min-width: 1025px) {
+        .product-list {
+            grid-template-columns: repeat(5, 1fr);
+        }
+    }
+
+
+</style>
+<body>
+    <main class="product-list">
+        <div class="product">
+            <img src="https://laz-img-sg.alicdn.com/p/c9e77951f7afbd664f0740e54ea29461.jpg" alt="Product 1" class="product__image">
+            
+            <div class="product__top-buttons">
+                <button class="product__appliances">Available</button>
+                <button class="product__add-to-cart">Appliances</button>
+              </div>
+              
+            <h2 class="product__name">Xiaomi Air Fryer 7.5L</h2>
+            <p class="product__description">Multifunctional Household Smokeless Fully Automatic New French Fries Machine Support Timer Temperature Control.. more </p>
+            <div class="product__bottom-buttons">
+                <button class="product__view-details">Add to Cart</button>
+                <button class="product__buy-now">Buy Now</button>
+            </div>
+            
+        </div>
+        <div class="product">
+            <img src="https://www.gigahertz.com.ph/cdn/shop/files/xiaomi-mi-in-ear-headphones-basic-xiaomi-gigahertz-885667_1024x.webp?v=1726730650" alt="Product 1" class="product__image">
+            <div class="product__top-buttons">
+                <button class="product__appliances" style="background-color:red;">Not Available</button>
+                <button class="product__add-to-cart">Electronics</button>
+              </div>
+              
+            <h2 class="product__name">Xiaomi Mi In-Ear Headphones</h2>
+            <p class="product__description">Aluminum sound chamber, clear and balanced sound quality. The aluminum sound chamber adapts a precise, structured...more </p>
+            <div class="product__bottom-buttons">
+                <button class="product__view-details">Add to Wishlist</button>
+                <button class="product__buy-now">Out of Stock</button>
+            </div>
+        </div>
+        <div class="product">
+            <img src="https://socksnob.co.uk/wp-content/uploads/2023/08/SK241-P-Black-980x980.jpg" alt="Product 1" class="product__image">
+            
+            <div class="product__top-buttons">
+                <button class="product__appliances" style="background-color: #2E86C1;">Coming Soon</button>
+                <button class="product__add-to-cart">Apparel</button>
+              </div>
+              
+            <h2 class="product__name">10 Pairs Cotton Toe Socks</h2>
+            <p class="product__description">Unisex Socks Cotton Plain Black/White/Grey Korean Summer Breathable Ankle Socks. Men/women affordable ankle socks </p>
+            <div class="product__bottom-buttons">
+                <button class="product__view-details">Add to Wishlist</button>
+                <button class="product__buy-now">See Yah!</button>
+            </div>
+        </div>
+        <div class="product">
+            <img src="https://www.furnituresourcephils.com/wp-content/uploads/2023/01/Nordic-Wood-Chair-Dark-Gray-1.jpg" alt="Product 1" class="product__image">
+            
+            <div class="product__top-buttons">
+                <button class="product__appliances">Available</button>
+                <button class="product__add-to-cart">Furniture</button>
+              </div>
+              
+            <h2 class="product__name">Nordic Chair Home Chair</h2>
+            <p class="product__description">Eames Modern Creative Style Chair. Ideal for Home and Office Use - Living Rooms, Dining Rooms, Bedrooms, Nurseries...more</p>
+            <div class="product__bottom-buttons">
+                <button class="product__view-details">Add to Cart</button>
+                <button class="product__buy-now">Buy Now</button>
+            </div>
+        </div>
+        <div class="product">
+            <img src="https://ph-test-11.slatic.net/p/1ce9b07c8aff01a784ee840e6af6ead0.jpg" alt="Product 1" class="product__image">
+            <div class="product__top-buttons">
+                <button class="product__appliances" style="background-color: red;">Not Available</button>
+                <button class="product__add-to-cart">Stationery</button>
+              </div>
+              
+            <h2 class="product__name">Dong-A Fine Tech Pen</h2>
+            <p class="product__description">100% ORIGINAL AND LEGIT. 0.3mm/0.4mm thickness (Black, Blue and Red) (SOLD PER PIECE). For Bulk and large order</p>
+            <div class="product__bottom-buttons">
+                <button class="product__view-details" >Add to Cart</button>
+                <button class="product__buy-now">Buy Now</button>
+            </div>
+        </div>
+            <div class="product">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl2vBf0OMTkepsl5m7gcqSB2CWlnt8zwtnwA&s" alt="Product 1" class="product__image">
+                <div class="product__top-buttons">
+                    <button class="product__appliances"style="background-color: #2E86C1;"">Coming Soon</button>
+                    <button class="product__add-to-cart">Appliances</button>
+                  </div>
+                  
+    
+                <h2 class="product__name">Akari ARF-8018 Fan w/ LED 8</h2>
+                <p class="product__description">Akari  (ARF-8018) Rechargeable Square Fan  provides practical task lighting while keeping you fresh during outdoor activities</p>
+    
+                <div class="product__bottom-buttons">
+                    <button class="product__view-details">Add to Cart</button>
+                    <button class="product__buy-now">Buy Now</button>
+                </div>
+                </div>
+                <div class="product">
+                    <img src="https://down-ph.img.susercontent.com/file/ph-11134208-7r98y-luiyits5oqx7e2" alt="Product 1" class="product__image">
+            
+                    <div class="product__top-buttons">
+                        <button class="product__appliances">Available</button>
+                        <button class="product__add-to-cart">Electronics</button>
+                      </div>
+                      
+        
+                    <h2 class="product__name">Zeus Meka 2.4G Wireless Mouse</h2>
+                    <p class="product__description">Are you ready to take your gaming experience to the next level? Look no further! Our state-of-the-art gaming mouse is designed</p>
+        
+                    <div class="product__bottom-buttons">
+                        <button class="product__view-details">Add to Cart</button>
+                        <button class="product__buy-now">Buy Now</button>
+                    </div>
+                </div>
+                    <div class="product">
+                        <img src="https://www.penshoppe.com/cdn/shop/products/968404-Black_7_1800x1800.jpg?v=1666055821" alt="Product 1" class="product__image">
+                        
+                        <div class="product__top-buttons">
+                            <button class="product__appliances" style="background-color: red;">Not Available</button>
+                            <button class="product__add-to-cart">Apparel</button>
+                          </div>
+                          
+            
+                        <h2 class="product__name">Penshoppe Relaxed Fit T-Shirt</h2>
+                        <p class="product__description">Jersey Knit (Single Jersey). 60% Cotton 40% Polyester. (Dark Green/Navy Blue/Sand/White) Basic, Korean, Retro, Street Style</p>
+                        <div class="product__bottom-buttons">
+                            <button class="product__view-details">Add to Cart</button>
+                            <button class="product__buy-now">Buy Now</button>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhPwvxA4z1KnS8dj4zBY_93BIFYBUqRYWMBA&s" alt="Product 1" class="product__image">
+                        <div class="product__top-buttons">
+                            <button class="product__appliances" style="background-color: #2E86C1;">Coming Soon</button>
+                            <button class="product__add-to-cart">Furniture</button>
+                          </div>
+                          
+            
+                        <h2 class="product__name">Computer Table 405312</h2>
+                        <p class="product__description">SanYang Table Paper Laminate and Particle Board. 80 x 39.6 x 73.5 cm (LWH) Dark Walnut. Durable, easy to clean, stylish, accessible price</p>
+                        <div class="product__bottom-buttons">
+                            <button class="product__view-details">Add to Wishlist</button>
+                <button class="product__buy-now">See Yah!</button>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="https://down-ph.img.susercontent.com/file/sg-11134201-23010-70cg9ite89lv7a" alt="Product 1" class="product__image">
+                        <div class="product__top-buttons">
+                            <button class="product__appliances">Available</button>
+                            <button class="product__add-to-cart">Stationery</button>
+                          </div>
+                          
+                        <h2 class="product__name">Deli A5/B5 Binder Notebook</h2>
+                        <p class="product__description">For College 60 Sheets Loose-Leaf Notebook School Supplies EN203/EN204. Ship within 24 hours. Your satisfaction is our pursuit</p>
+    
+ 
+                        <div class="product__bottom-buttons">
+                            <button class="product__view-details">Add to Cart</button>
+                <button class="product__buy-now">Buy Now</button>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZG7LH846S01K0nfVwqHrmjbDCB82ZKSv9oQ&s" alt="Product 1" class="product__image">
+                        <div class="product__top-buttons">
+                            <button class="product__appliances" style="background-color: red;" ">Not Available</button>
+                            <button class="product__add-to-cart">Appliances</button>
+                          </div>
+                          
+            
+                       
+                        <h2 class="product__name">Kaisa Villa Mini Refrigerator</h2>
+                        <p class="product__description">100% brand new and high quality. Preserve your consumables even when you’re on-the-go with the sleek Portable Car Electronic 2-in-1</p>
+    
+                        <div class="product__bottom-buttons">
+                            <button class="product__view-details">Add to Wishlist</button>
+                            <button class="product__buy-now">Out of Stock</button>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="https://easypc.com.ph/cdn/shop/files/Inplay_NK680-B_Red_switch_Mechanical_Gaming_Keyboard_Black-c_2048x.png?v=1713160303" alt="Product 1" class="product__image">
+                        <div class="product__top-buttons">
+                            <button class="product__appliances" style="background-color: #2E86C1;">Coming</button>
+                            <button class="product__add-to-cart">Electronics</button>
+                          </div>
+                          
+            
+                         <h2 class="product__name">Inplay 68/85 Key RGB Keyboard</h2>
+                    <p class="product__description">168 Key Keyboard: BK680 keyboard has a very small and compact design.Nothing extra. Convenient to carry around...more</p>
+                        <div class="product__bottom-buttons">
+                            <button class="product__view-details">Add to Wishlist</button>
+                <button class="product__buy-now">See Yah!</button>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="https://laz-img-sg.alicdn.com/p/ab8c696ad971de49b6aad9d704af3359.jpg" alt="Product 1" class="product__image">
+                        
+                        <div class="product__top-buttons">
+                            <button class="product__appliances">Available</button>
+                            <button class="product__add-to-cart">Apparel</button>
+                          </div>
+                          
+                        <h2 class="product__name">Lovito Women Pocket Pants</h2>
+                    <p class="product__description">100%Polyester, High Waist, Wide Leg, Full Length, Casual Plain. Slim Fit, No sheer, Non-stretch. Ship from Mainland...more</p>
+                        <div class="product__bottom-buttons">
+                            <button class="product__view-details">Add to Cart</button>
+                            <button class="product__buy-now">Buy Now</button>
+                           
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="https://down-ph.img.susercontent.com/file/sg-11134201-7rcdk-lqzwaed0y4ue76" alt="Product 1" class="product__image">
+                        
+                        <div class="product__top-buttons">
+                            <button class="product__appliances" style="background-color: red;">Not Available</button>
+                            <button class="product__add-to-cart">Furniture</button>
+                          </div>
+                          
+                        <h2 class="product__name">Mandaue Foam Dinah Cabinet</h2>
+                        <p class="product__description">3 Door Cabinet with 1 hanger rod and 2 compartments inside (81cm x 40 cm x 96 cm). Chipboard laminated with melamine</p>
+                        <div class="product__bottom-buttons">
+                            <button class="product__view-details">Add to Wishlist</button>
+                            <button class="product__buy-now">Buy Now</button>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="https://m.media-amazon.com/images/I/51gMy464JaL.jpg" alt="Product 1" class="product__image">
+                        
+                        <div class="product__top-buttons">
+                            <button class="product__appliances" style="background-color: #2E86C1;">Coming Soon</button>
+                            <button class="product__add-to-cart">Stationery</button>
+                          </div>
+                          
+            
+                        <h2 class="product__name">Sticky Notes 3x3 Inches</h2>
+                    <p class="product__description">Best Buy sticky notes are used to write down your thoughts, list and reminders and can be use for office, home, school, desk surfaces</p>
+                        <div class="product__bottom-buttons">
+                            <button class="product__view-details">Add to Wishlist</button>
+                            <button class="product__buy-now">See Yah!</button>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="https://down-ph.img.susercontent.com/file/ph-11134207-7r98v-ly0nep1o342p38" alt="Product 1" class="product__image">
+                        
+                        <div class="product__top-buttons">
+                            <button class="product__appliances">Available</button>
+                            <button class="product__add-to-cart">Electronics</button>
+                          </div>
+                          
+            
+                         <h2 class="product__name">KANAZAWA Electric Oven</h2>
+                    <p class="product__description">KANAZAWA Electric Oven 15L Multipurpose Kitchen Baking Mechanical Rotary Knob Type Household. 220~240V/60Hz</p>
+                        <div class="product__bottom-buttons">
+                            <button class="product__view-details">Add to Cart</button>
+                            <button class="product__buy-now">Buy Now</button>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="https://i05.appmifile.com/765_item_uk/09/05/2024/72c892565f13be9b08823f90ef952247!400x400!85.png" alt="Product 1" class="product__image">
+                        
+                        <div class="product__top-buttons">
+                            <button class="product__appliances" style="background-color: red;">Not Available</button>
+                            <button class="product__add-to-cart">Electronic</button>
+                          </div>
+                          
+            
+                        <h2 class="product__name">Xiaomi Pad 6 Keyboard</h2>
+                    <p class="product__description">100% original xiaomi. The keyboard is only suitable for Xiaomi Mi Pad 6/ Mi Pad 6 Pro. 344.3mm × 255.6mm × 5.4mm</p>
+                        <div class="product__bottom-buttons">
+                            <button class="product__view-details">Add to Wishlist</button>
+                            <button class="product__buy-now">Out Of stock</button>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="https://www.regattalifestyle.com/cdn/shop/files/976292-Cream_4_540x.jpg?v=1728006691" alt="Product 1" class="product__image">
+                        
+                        <div class="product__top-buttons">
+                            <button class="product__appliances" style="background-color: #2E86C1">Coming Soon</button>
+                            <button class="product__add-to-cart">Apparel</button>
+                          </div>
+                          
+                        <h2 class="product__name">Regatta 5 Panel Cap</h2>
+                        <p class="product__description">Regatta 5 Panel Cap With Side Contrast Outline For Men (Cream). Twill Weave and 100% Cotton. Free Size - 58. Product may</p>
+                        <div class="product__bottom-buttons">
+                            <button class="product__view-details">Add to Wishlist</button>
+                            <button class="product__buy-now">See Yah!</button>
+                        </div>
+                    </div>
+                    
+        </div>
+        
+    </main>
+</body>
+</html>
